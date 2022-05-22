@@ -5,7 +5,11 @@
 extern "C" {
 #endif
 
-void* leaf_new();
+void cleaf_init();
+
+void* cleaf_new();
+
+void cleaf_delete(void* leaf);
 
 #ifdef __cplusplus
 }

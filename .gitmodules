@@ -1,0 +1,4 @@
+[submodule "Log"]
+	path = Log
+	url = https://github.com/maxkofler/Log
+	shallow = true
