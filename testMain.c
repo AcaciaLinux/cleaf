@@ -8,5 +8,5 @@ int main(){
 
 	void* leaf = cleafcore_new();
 
-	cleafcore_delete(leaf);
+	cleafcore_a_update(leaf);
 }

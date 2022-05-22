@@ -15,6 +15,11 @@ extern "C" {
 	 */
 	void cleafcore_delete(void* leaf);
 
+	/**
+	 * @brief	Updates the local package list
+	 */
+	int cleafcore_a_update(void* leaf);
+
 #ifdef __cplusplus
 }
 #endif
