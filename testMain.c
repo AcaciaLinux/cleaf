@@ -1,11 +1,12 @@
-//Compile: gcc testMain.c -lleafcore
+//Compile: gcc testMain.c -lcleaf
 
+#include <cleaf/cleaf.h>
 #include <cleaf/cleafcore.h>
 
 int main(){
-	cleaf_init();
+	cleaf_init(LOGLEVEL_A);
 
-	void* leaf = cleaf_new();
+	void* leaf = cleafcore_new();
 
-	cleaf_delete(leaf);
+	cleafcore_delete(leaf);
 }

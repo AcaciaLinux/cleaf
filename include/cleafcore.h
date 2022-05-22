@@ -5,11 +5,15 @@
 extern "C" {
 #endif
 
-void cleaf_init();
+	/**
+	 * @brief	Creates a new leafcore instance
+	 */
+	void* cleafcore_new();
 
-void* cleaf_new();
-
-void cleaf_delete(void* leaf);
+	/**
+	 * @brief	Removes the supplied leafcore instance
+	 */
+	void cleafcore_delete(void* leaf);
 
 #ifdef __cplusplus
 }
