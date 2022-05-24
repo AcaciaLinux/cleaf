@@ -12,6 +12,8 @@ int main(){
 
 	cleafconfig_setRootDir("./root/");
 
+	cleafconfig_setBoolConfig(CLEAF_B_CONFIG_NOASK, 1);
+
 	void* leaf = cleafcore_new();
 
 	if (cleafcore_a_update(leaf) != 0)
@@ -27,7 +29,7 @@ int main(){
 
 	if (cleafcore_a_install(leaf, 1, packages) != 0)
 		goto fail;
-
+	
 	return 0;
 
 fail:
