@@ -3,11 +3,13 @@
 
 #include <leafcore/leafcore.h>
 #include <leafcore/error.h>
+#include <leafcore/leafconfig.h>
 
 extern "C" {
 
 	void* cleafcore_new(){
 		FUN();
+		lConfig.rootDir = "./root/";
 		return new Leafcore();
 	}
 

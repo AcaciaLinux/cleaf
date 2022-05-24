@@ -8,17 +8,42 @@ extern "C" {
 	/**
 	 * @brief	Creates a new leafcore instance
 	 */
-	void* cleafcore_new();
+	void* 		cleafcore_new();
 
 	/**
 	 * @brief	Removes the supplied leafcore instance
 	 */
-	void cleafcore_delete(void* leaf);
+	void 		cleafcore_delete(void* leaf);
+
+	/**
+	 * @brief	Reads the package list at the supplied path
+	 * @param	leaf				The leaf instance to work with
+	 * @param	path				The path to the package list
+	 * @return	int
+	 */
+	int			cleafcore_readPackageList(void* leaf, char* path);
+
+	/**
+	 * @brief	Reads the package list at its path in the leafconfig
+	 * @param	leaf				The leaf instance to work with
+	 * @return	int
+	 */
+	int			cleafcore_readDefaultPackageList(void* leaf);
 
 	/**
 	 * @brief	Updates the local package list
+	 * @param	leaf				The leaf instance to work with
 	 */
-	int cleafcore_a_update(void* leaf);
+	int 		cleafcore_a_update(void* leaf);
+
+	/**
+	 * @brief	Installs the supplied packages to the root
+	 * @param	leaf				The leaf instance to work with
+	 * @param	countPackages		The amount of packages to process
+	 * @param	packages			A char string array containg the package names
+	 * @return	int					
+	 */
+	int 		cleafcore_a_install(void* leaf, int countPackages, char** packages);
 
 #ifdef __cplusplus
 }
