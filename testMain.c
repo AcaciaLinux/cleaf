@@ -2,12 +2,15 @@
 
 #include <cleaf/cleaf.h>
 #include <cleaf/cleafcore.h>
+#include <cleaf/cleafconfig.h>
 
 #include <malloc.h>
 #include <string.h>
 
 int main(){
 	cleaf_init(LOGLEVEL_A);
+
+	cleafconfig_setRootDir("./root/");
 
 	void* leaf = cleafcore_new();
 

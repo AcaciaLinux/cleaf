@@ -9,7 +9,6 @@ extern "C" {
 
 	void* cleafcore_new(){
 		FUN();
-		lConfig.rootDir = "./root/";
 		return new Leafcore();
 	}
 
