@@ -8,6 +8,7 @@ extern "C"{
 
 	void cleaf_init(enum loglevel level){
 		hlog = new Log::Log((Log::level)level);
+		hlog->setFeature(Log::FEATURE_PRINTFUNNAMES, false);
 		FUN();
 		_cleaf_initialized = true;
 	}

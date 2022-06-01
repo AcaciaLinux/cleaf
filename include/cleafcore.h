@@ -31,6 +31,13 @@ extern "C" {
 	int			cleafcore_readDefaultPackageList(void* leaf);
 
 	/**
+	 * @brief	Parses all the installed packages to determine which packages are already installed on the systems
+	 * @param	leaf				The leaf instance to work with
+	 * @return	int
+	 */
+	int			cleafcore_parseInstalled(void* leaf);
+
+	/**
 	 * @brief	Updates the local package list
 	 * @param	leaf				The leaf instance to work with
 	 */
