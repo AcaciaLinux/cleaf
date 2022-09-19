@@ -1,6 +1,8 @@
 #ifndef __CLEAF_LEAFCORE_H__
 #define __CLEAF_LEAFCORE_H__
 
+#include "cleafconfig.h"
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -14,6 +16,11 @@ extern "C" {
 	 * @brief	Removes the supplied leafcore instance
 	 */
 	void 		cleafcore_delete(void* leaf);
+
+	/**
+	 * @brief	Returns a pointer to the currently used config
+	 */
+	cleaf_config*	cleafcore_getConfig(void* leaf);
 
 	/**
 	 * @brief	Reads the package list at the supplied path

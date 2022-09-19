@@ -8,13 +8,14 @@
 #include <string.h>
 
 int main(){
-	cleaf_init(LOGLEVEL_A);
-
-	cleafconfig_setRootDir("./root/");
-
-	cleafconfig_setBoolConfig(CLEAF_B_CONFIG_NOASK, 1);
-
+	cleaf_init(LOGLEVEL_U);
 	void* leaf = cleafcore_new();
+
+	cleaf_config* lConf = cleafcore_getConfig(leaf);
+
+	cleafconfig_setRootDir(lConf, "./root/");
+
+	cleafconfig_setBoolConfig(lConf, CLEAF_B_CONFIG_NOASK, 1);	
 
 	if (cleafcore_a_update(leaf) != 0)
 		goto fail;
@@ -22,8 +23,6 @@ int main(){
 	char* packages[] = {
 		"base"
 	};
-
-	printf("Strlen: %i\n", strlen(packages[0]));
 
 	cleafcore_readDefaultPackageList(leaf);
 
