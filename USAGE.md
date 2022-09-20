@@ -4,7 +4,7 @@ The main object to work with is the `cleafcore` object, that is implemented as a
 
 > **Warning**
 > 
-> Altrough the main cleafcore pointer is a `void*` and can thus be casted to any type, it's highly recommended to be very careful with it. Missuse can lead to unexpected behaviour and crashes without any warnings or errors neither from the compilers side or leaf's side!
+> Altrough the main cleafcore pointer is a `void*` and can thus be casted to any type, it's highly recommended to be very careful with it. Misuse can lead to unexpected behaviour and crashes without any warnings or errors neither from the compilers side or leaf's side!
 
 ### cleaf setup
 
