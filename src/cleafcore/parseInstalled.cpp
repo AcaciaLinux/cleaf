@@ -17,7 +17,7 @@ extern "C" {
 			leaf->parseInstalled();
 		} catch (LeafError* e){
 			LOGUE("Parsing installed files failed: " + e->what());
-			return -1;
+			return e->getErrorCode();
 		}
 
 		return 0;

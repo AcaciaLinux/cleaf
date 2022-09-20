@@ -14,7 +14,7 @@ extern "C" {
 			leaf->parsePackageList(std::string(path));
 		} catch (LeafError* e){
 			LOGUE("Parsing package list failed: " + e->what());
-			return -1;
+			return e->getErrorCode();
 		}
 
 		return 0;

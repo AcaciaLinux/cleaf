@@ -24,7 +24,7 @@ enum cleaf_string_config{
 	CLEAF_S_PKGLISTPATH = 6
 };
 
-typedef void cleaf_config;
+typedef int cleaf_config;
 
 #ifdef __cplusplus
 extern "C" {

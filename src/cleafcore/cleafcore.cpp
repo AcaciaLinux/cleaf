@@ -29,7 +29,7 @@ extern "C" {
 			leaf->a_update();
 		} catch (LeafError* e){
 			LOGUE("Update failed: " + e->what());
-			return -1;
+			return e->getErrorCode();
 		}
 		return 0;
 	}

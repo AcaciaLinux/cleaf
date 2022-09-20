@@ -25,7 +25,7 @@ extern "C" {
 			leaf->a_install(packages);
 		} catch (LeafError* e){
 			LOGUE("Install failed: " + e->what());
-			return -1;
+			return e->getErrorCode();
 		}
 
 		return 0;
