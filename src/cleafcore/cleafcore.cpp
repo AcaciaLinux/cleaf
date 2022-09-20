@@ -20,7 +20,7 @@ extern "C" {
 
 	cleaf_config* cleafcore_getConfig(void* cleaf){
 		FUN();
-		return &((Leafcore*)cleaf)->getConfig();
+		return (cleaf_config*)&((Leafcore*)cleaf)->getConfig();
 	}
 
 	int cleafcore_a_update(void* cleaf){
