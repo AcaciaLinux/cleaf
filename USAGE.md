@@ -15,11 +15,11 @@ To initialize the `cleaf` environment, a call to the following function has to b
 void cleaf_init(enum loglevel level)
 ```
 
-This will setup the `cleaf` environment, create the `Log` module for `leaf` and prepare leaf for instantiation.
+This will setup the `cleaf` environment, create the `Log` module for `leaf` and prepare it for instantiation.
 
 > **Note**
 > 
-> You **HAVE** to call this function before doing **anything** other in `cleaf` , it will check if this function has been called and if not will not do **ANYTHING!**
+> You **HAVE** to call this function before doing **anything** other using `cleaf`, it will check if this function has been called and if not will not do **ANYTHING!**
 
 ### Instantiate the leafcore object
 
@@ -30,7 +30,7 @@ To instantiate a new `leafcore` object to do operations on, a call to the follow
 void* cleafcore_new()
 ```
 
-The return value `void*` is the newly created `leafcore` object, casted to `void*` that C does not have to know anything about the `leaf` implementation being in C++.
+The return value `void*` is the newly created `leafcore` object, casted to `void*`, so C does not have to know anything about the `leaf` implementation being C++.
 
 > **Note**
 > 
@@ -86,7 +86,7 @@ The resulting binary is called `a.out`.
 
 > **Warning**
 > 
-> At this stage leaf has no configuration, except you have one located at `/etc/leaf/leaf.conf`. Tt will write to your ROOT (/) and install any package can and will override your running system's programs, which will almost certainly lead to issues. Fortunately `leaf` warns you by exiting gently and giving you an error message explaining that the files of the package to install are already existing and that it can not continue its operation.
+> At this stage leaf has no configuration, except you have one located at `/etc/leaf/leaf.conf`. It will write to your ROOT (/) and installing any package can and will override your running system's programs, which will almost certainly lead to issues. Fortunately `leaf` warns you by exiting gently and giving you an error message explaining that the files of the package to install are already existing and that it can not continue its operation.
 
 ### Installing packages
 
@@ -160,4 +160,4 @@ The resulting binary is called `a.out`.
 
 > **Warning**
 > 
-> At this stage leaf has no configuration, except you have one located at `/etc/leaf/leaf.conf`. Tt will write to your ROOT (/) and install any package can and will override your running system's programs, which will almost certainly lead to issues. Fortunately `leaf` warns you by exiting gently and giving you an error message explaining that the files of the package to install are already existing and that it can not continue its operation.
+> At this stage leaf has no configuration, except you have one located at `/etc/leaf/leaf.conf`. It will write to your ROOT (/) and installing any package can and will override your running system's programs, which will almost certainly lead to issues. Fortunately `leaf` warns you by exiting gently and giving you an error message explaining that the files of the package to install are already existing and that it can not continue its operation.
