@@ -8,20 +8,20 @@
 
 extern "C"{
 
-	void cleafconfig_setRootDir(cleaf_config* conf, const char* dir){
+	void cleafconfig_setRootDir(void* cleafcore, const char* dir){
 		FUN();
-		((leaf_config_t*)conf)->setRootDir(std::string(dir));
+		((Leafcore*)cleafcore)->getConfig().setRootDir(dir);
 		LOGAPI("[cleaf] Setting cleafconfig root directory to " + std::string(dir));
 	}
 
-	void leafconfig_setRedownload(cleaf_config* conf, cleaf_config_redownload redownload){
+	void leafconfig_setRedownload(void* cleafcore, cleaf_config_redownload redownload){
 		FUN();
 
-		((leaf_config_t*)conf)->redownload = (config_redownload)redownload;
+		((Leafcore*)cleafcore)->getConfig().redownload = (config_redownload)redownload;
 		LOGAPI("[cleaf] Setting redownload mode to " + std::to_string((int)redownload));
 	}
 
-	void cleafconfig_setBoolConfig(cleaf_config* conf, cleaf_bool_config config, int option){
+	void cleafconfig_setBoolConfig(void* cleafcore, cleaf_bool_config config, int option){
 		FUN();
 
 		bool state = option;
@@ -29,19 +29,19 @@ extern "C"{
 		switch (config){
 		
 		case CLEAF_B_CONFIG_NOASK:
-			((leaf_config_t*)conf)->noAsk = state;
+			((Leafcore*)cleafcore)->getConfig().noAsk = state;
 			break;
 
 		case CLEAF_B_CONFIG_FORCEOVERWRITE:
-			((leaf_config_t*)conf)->forceOverwrite = state;
+			((Leafcore*)cleafcore)->getConfig().forceOverwrite = state;
 			break;
 
 		case CLEAF_B_CONFIG_RUNPREINSTALL:
-			((leaf_config_t*)conf)->runPreinstall = state;
+			((Leafcore*)cleafcore)->getConfig().runPreinstall = state;
 			break;
 
 		case CLEAF_B_CONFIG_RUNPOSTINSTALL:
-			((leaf_config_t*)conf)->runPostinstall = state;
+			((Leafcore*)cleafcore)->getConfig().runPostinstall = state;
 			break;
 
 		}
@@ -50,7 +50,7 @@ extern "C"{
 
 	}
 
-	int leafconfig_getBoolConfig(cleaf_config* conf, cleaf_bool_config config){
+	int leafconfig_getBoolConfig(void* cleafcore, cleaf_bool_config config){
 		FUN();
 
 		int res = -1;
@@ -58,19 +58,19 @@ extern "C"{
 		switch (config){
 		
 		case CLEAF_B_CONFIG_NOASK:
-			res = ((leaf_config_t*)conf)->noAsk;
+			res = ((Leafcore*)cleafcore)->getConfig().noAsk;
 			break;
 
 		case CLEAF_B_CONFIG_FORCEOVERWRITE:
-			res = ((leaf_config_t*)conf)->forceOverwrite;
+			res = ((Leafcore*)cleafcore)->getConfig().forceOverwrite;
 			break;
 
 		case CLEAF_B_CONFIG_RUNPREINSTALL:
-			res = ((leaf_config_t*)conf)->runPreinstall;
+			res = ((Leafcore*)cleafcore)->getConfig().runPreinstall;
 			break;
 
 		case CLEAF_B_CONFIG_RUNPOSTINSTALL:
-			res = ((leaf_config_t*)conf)->runPostinstall;
+			res = ((Leafcore*)cleafcore)->getConfig().runPostinstall;
 			break;
 
 		}
@@ -81,7 +81,7 @@ extern "C"{
 
 	}
 
-	char* cleafconfig_getStringConfig(cleaf_config* conf, cleaf_string_config config){
+	char* cleafconfig_getStringConfig(void* cleafcore, cleaf_string_config config){
 		FUN();
 
 		std::string res;
@@ -89,31 +89,31 @@ extern "C"{
 		switch (config){
 
 		case CLEAF_S_ROOTDIR:
-			res = ((leaf_config_t*)conf)->rootDir;
+			res = ((Leafcore*)cleafcore)->getConfig().rootDir;
 			break;
 
 		case CLEAF_S_CACHEDIR:
-			res = ((leaf_config_t*)conf)->cacheDir();
+			res = ((Leafcore*)cleafcore)->getConfig().cacheDir();
 			break;
 
 		case CLEAF_S_DOWNLOADDIR:
-			res = ((leaf_config_t*)conf)->downloadDir();
+			res = ((Leafcore*)cleafcore)->getConfig().downloadDir();
 			break;
 
 		case CLEAF_S_PACKAGESDIR:
-			res = ((leaf_config_t*)conf)->packagesDir();
+			res = ((Leafcore*)cleafcore)->getConfig().packagesDir();
 			break;
 
 		case CLEAF_S_CONFIGDIR:
-			res = ((leaf_config_t*)conf)->configDir();
+			res = ((Leafcore*)cleafcore)->getConfig().configDir();
 			break;
 
 		case CLEAF_S_INSTALLEDDIR:
-			res = ((leaf_config_t*)conf)->installedDir();
+			res = ((Leafcore*)cleafcore)->getConfig().installedDir();
 			break;
 
 		case CLEAF_S_PKGLISTPATH:
-			res = ((leaf_config_t*)conf)->pkgListPath();
+			res = ((Leafcore*)cleafcore)->getConfig().pkgListPath();
 			break;
 
 		}

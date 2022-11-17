@@ -18,11 +18,6 @@ extern "C" {
 	void 		cleafcore_delete(void* leaf);
 
 	/**
-	 * @brief	Returns a pointer to the currently used config
-	 */
-	cleaf_config*	cleafcore_getConfig(void* leaf);
-
-	/**
 	 * @brief	Reads the package list at the supplied path
 	 * @param	leaf				The leaf instance to work with
 	 * @param	path				The path to the package list

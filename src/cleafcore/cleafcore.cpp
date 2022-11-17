@@ -18,11 +18,6 @@ extern "C" {
 		delete (Leafcore*) cleaf;
 	}
 
-	cleaf_config* cleafcore_getConfig(void* cleaf){
-		FUN();
-		return (cleaf_config*)&((Leafcore*)cleaf)->getConfig();
-	}
-
 	int cleafcore_a_update(void* cleaf){
 		Leafcore* leaf = (Leafcore*)cleaf;
 		try{
