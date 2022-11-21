@@ -55,6 +55,15 @@ extern "C" {
 	 */
 	int 		cleafcore_a_install(void* leaf, int countPackages, char** packages);
 
+	/**
+	 * @brief	Upgrades/Changes the supplied packages on the root
+	 * @param	leaf				The leaf instance to work with
+	 * @param	countPackages		The amount of packages to process
+	 * @param	packages			A char string array containg the package names
+	 * @return	int					0, else the leaf error code
+	 */
+	int			cleafcore_a_upgrade(void* leaf, int countPackages, char** packages);
+
 #ifdef __cplusplus
 }
 #endif
