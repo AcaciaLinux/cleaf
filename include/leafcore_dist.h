@@ -29,5 +29,20 @@
 	#define CLEAFCORE_LEAFCORE_CODENAME "UNKNOWN"
 #endif
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+	/**
+	 * @brief	Displays an error explaining the feature is unavailable in the leafcore version used
+	 * @param	f_name			The name of the feature
+	 * @param	required_major	The required major version of leafcore for this feature
+	 * @param	required_minor	The required minor version of leafcore for this feature
+	 * @param	required_patch	The required patch version of leafcore for this feature (default = 0)
+	 * @return	int				A negative return code (to use "return e_feature_missing()")
+	 */
+	int e_feature_missing(const char* f_name, unsigned int required_major, unsigned int required_minor, unsigned int required_patch = 0);
+#ifdef __cplusplus
+}
+#endif
 
 #endif
