@@ -26,6 +26,8 @@ int main(){
 
 	if (cleafcore_a_install(leaf, 1, packages) != 0)
 		goto fail;
+
+	cleafcore_a_upgrade(leaf, 0, NULL);
 	
 	return 0;
 
