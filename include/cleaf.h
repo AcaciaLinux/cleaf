@@ -3,9 +3,15 @@
 
 #include "loglevels.h"
 
+#include <stdint.h>
+
 #ifdef __cplusplus
 extern "C" {
 #endif
+
+	unsigned int cleaf_get_leafcore_major();
+	unsigned int cleaf_get_leafcore_minor();
+	unsigned int cleaf_get_leafcore_patch();
 
 	/**
 	 * @brief	Initializes the cleaf runtime with some leaf dependencies such as the Log module
