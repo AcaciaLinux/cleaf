@@ -9,8 +9,19 @@
 extern "C" {
 #endif
 
+	/**
+	 * @brief	Reports the major version of leafcore
+	 */
 	unsigned int cleaf_get_leafcore_major();
+
+	/**
+	 * @brief	Reports the minor version of leafcore
+	 */
 	unsigned int cleaf_get_leafcore_minor();
+
+	/**
+	 * @brief	Reports the patch version of leafcore
+	 */
 	unsigned int cleaf_get_leafcore_patch();
 
 	/**
