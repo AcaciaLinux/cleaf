@@ -1,9 +1,6 @@
 #ifndef __CLEAF_LEAFCONFIG_H__
 #define __CLEAF_LEAFCONFIG_H__
 
-#define FRIEND_LEAFCORE
-#include "leafcore/leafcore.h"
-
 enum cleaf_config_redownload{
 	CLEAF_CONFIG_REDOWNLOAD_NONE = 0,
 	CLEAF_CONFIG_REDOWNLOAD_SPECIFIED = 1,

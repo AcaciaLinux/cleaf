@@ -1,4 +1,8 @@
 #include "log.h"
+
+#define FRIEND_LEAFCORE
+#include "leafcore/leafcore.h"
+
 #include "cleafconfig.h"
 
 #include <leafcore/leafconfig.h>
