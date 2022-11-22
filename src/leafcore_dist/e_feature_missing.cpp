@@ -17,5 +17,5 @@ int e_feature_missing(const char* f_name, unsigned int required_major, unsigned 
 	LOGU("The current leafcore version is " LEAFCORE_VERSION);
 	LOGU("!!!!! [cleaf] !!!!!");
 
-	return -1;
+	return EC_FEATURE_MISSING;
 }

@@ -5,8 +5,12 @@
  * @copyright	Copyright (c) 2022
  */
 
+#include <climits>
+
 #ifndef __CLEAF_LEAFCORE_DIST_H__
 #define __CLEAF_LEAFCORE_DIST_H__
+
+#define EC_FEATURE_MISSING INT_MIN
 
 //Check if leafcore does have dist.h (from 0.2.0 on)
 #if __has_include("leafcore/dist.h")
@@ -41,6 +45,11 @@ extern "C" {
 	 * @return	int				A negative return code (to use "return e_feature_missing()")
 	 */
 	int e_feature_missing(const char* f_name, unsigned int required_major, unsigned int required_minor, unsigned int required_patch = 0);
+
+	/**
+	 * @brief	Returns the error code that gets returned if a leafcore feature is missing
+	 */
+	int get_ec_feature_missing();
 #ifdef __cplusplus
 }
 #endif
