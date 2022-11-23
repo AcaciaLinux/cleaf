@@ -36,6 +36,21 @@ extern "C" {
 	 */
 	void 						cleaf_setLogLevel(enum loglevel level);
 
+	/**
+	 * @brief	Returns a char* to the leaf log, delete it using cleaf_delete_log()
+	 */
+	char*						cleaf_get_log();
+
+	/**
+	 * @brief	Remove the memory allocated by cleaf_get_log()
+	 */
+	void						cleaf_delete_log(char*);
+
+	/**
+	 * @brief	Clears the internal log stringstream
+	 */
+	void						cleaf_clear_log();
+
 #ifdef __cplusplus
 }
 #endif
