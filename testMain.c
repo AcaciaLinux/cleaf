@@ -28,6 +28,12 @@ int main(){
 		goto fail;
 
 	cleafcore_a_upgrade(leaf, 0, NULL);
+
+	char* log = cleaf_get_log();
+	printf("\n\n");
+	printf("---------- LEAF VERBOSE LOG ----------\n%s", log);
+	printf("-------- END LEAF VERBOSE LOG --------\n");
+	cleaf_delete_log(log);
 	
 	return 0;
 
