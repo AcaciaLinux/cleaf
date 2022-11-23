@@ -64,13 +64,13 @@ extern "C"{
 	}
 
 	char* cleaf_get_log(){
-		#if LEAFCORE_V_MINOR > 2 || LEAFCORE_V_MINOR == 2 && LEAFCORE_V_PATCH >= 1
+		#if LEAFCORE_V_MINOR > 2 || LEAFCORE_V_MINOR == 2 && LEAFCORE_V_PATCH >= 2
 			std::string curLog = _ss_log.str();
 			char* res = (char*)std::malloc(curLog.length() + 1);
 			std::strcpy(res, curLog.c_str());
 			return res;
 		#else
-			e_feature_missing("Log with streams", 0, 2, 1);
+			e_feature_missing("Log with streams", 0, 2, 2);
 			return NULL;
 		#endif
 	}
