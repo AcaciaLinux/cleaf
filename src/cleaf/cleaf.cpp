@@ -45,7 +45,7 @@ extern "C"{
 
 		{
 			Log::stream_config c;
-			c.loglevel = Log::D;
+			c.loglevel = Log::I;
 			c.print_function_names = false;
 			hlog->addStream(_ss_log, c);
 		}
