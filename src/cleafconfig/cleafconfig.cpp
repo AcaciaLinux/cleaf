@@ -2,6 +2,7 @@
 
 #define FRIEND_LEAFCORE
 #include "leafcore/leafcore.h"
+#include "leafcore_dist.h"
 
 #include "cleafconfig.h"
 
@@ -49,9 +50,12 @@ extern "C"{
 			break;
 
 		case CLEAF_B_CONFIG_NOPROGRESS:
-			((Leafcore*)cleafcore)->getConfig().noProgress = state;
+			#if LEAFCORE_V_MINOR > 2 || LEAFCORE_V_MINOR == 2 && LEAFCORE_V_PATCH >= 3
+				((Leafcore*)cleafcore)->getConfig().noProgress = state;
+			#else
+				e_feature_missing("leafconfig.noProgress", 0, 2, 3);
+			#endif
 			break;
-
 		}
 
 		LOGAPI("[cleaf] Set boolean config " + std::to_string(config) + " to " + std::to_string(state));
@@ -82,7 +86,13 @@ extern "C"{
 			break;
 
 		case CLEAF_B_CONFIG_NOPROGRESS:
-			res = ((Leafcore*)cleafcore)->getConfig().noProgress;
+			#if LEAFCORE_V_MINOR > 2 || LEAFCORE_V_MINOR == 2 && LEAFCORE_V_PATCH >= 3
+				res = ((Leafcore*)cleafcore)->getConfig().noProgress;
+			#else
+				res = false;
+				e_feature_missing("leafconfig.noProgress", 0, 2, 3);
+			#endif
+			break;
 
 		}
 
