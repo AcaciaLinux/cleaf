@@ -48,6 +48,10 @@ extern "C"{
 			((Leafcore*)cleafcore)->getConfig().runPostinstall = state;
 			break;
 
+		case CLEAF_B_CONFIG_NOPROGRESS:
+			((Leafcore*)cleafcore)->getConfig().noProgress = state;
+			break;
+
 		}
 
 		LOGAPI("[cleaf] Set boolean config " + std::to_string(config) + " to " + std::to_string(state));
@@ -76,6 +80,9 @@ extern "C"{
 		case CLEAF_B_CONFIG_RUNPOSTINSTALL:
 			res = ((Leafcore*)cleafcore)->getConfig().runPostinstall;
 			break;
+
+		case CLEAF_B_CONFIG_NOPROGRESS:
+			res = ((Leafcore*)cleafcore)->getConfig().noProgress;
 
 		}
 
