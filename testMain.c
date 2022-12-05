@@ -15,6 +15,7 @@ int main(){
 
 	cleafconfig_setBoolConfig(leaf, CLEAF_B_CONFIG_NOASK, 1);
 	cleafconfig_setBoolConfig(leaf, CLEAF_B_CONFIG_NOPROGRESS, 0);
+	cleafconfig_setBoolConfig(leaf, CLEAF_B_CONFIG_FORCE, 0);
 
 	if (cleafcore_a_update(leaf) != 0)
 		goto fail;

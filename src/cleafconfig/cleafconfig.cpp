@@ -56,6 +56,15 @@ extern "C"{
 				e_feature_missing("leafconfig.noProgress", 0, 2, 3);
 			#endif
 			break;
+
+		case CLEAF_B_CONFIG_FORCE:
+			#if LEAFCORE_V_MINOR > 3 || LEAFCORE_V_MINOR == 3 && LEAFCORE_V_PATCH >= 0
+				((Leafcore*)cleafcore)->getConfig().force = state;
+			#else
+				e_feature_missing("leafconfig.force", 0, 2, 3);
+			#endif
+			break;
+
 		}
 
 		LOGAPI("[cleaf] Set boolean config " + std::to_string(config) + " to " + std::to_string(state));
@@ -91,6 +100,15 @@ extern "C"{
 			#else
 				res = false;
 				e_feature_missing("leafconfig.noProgress", 0, 2, 3);
+			#endif
+			break;
+
+		case CLEAF_B_CONFIG_FORCE:
+			#if LEAFCORE_V_MINOR > 3 || LEAFCORE_V_MINOR == 3 && LEAFCORE_V_PATCH >= 0
+				res = ((Leafcore*)cleafcore)->getConfig().force;
+			#else
+				res = false;
+				e_feature_missing("leafconfig.force", 0, 2, 3);
 			#endif
 			break;
 
