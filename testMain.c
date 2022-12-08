@@ -8,7 +8,7 @@
 #include <string.h>
 
 int main(){
-	cleaf_init(LOGLEVEL_U);
+	cleaf_init(LOGLEVEL_API);
 	void* leaf = cleafcore_new();
 
 	cleafconfig_setRootDir(leaf, "./root/");
@@ -16,6 +16,8 @@ int main(){
 	cleafconfig_setBoolConfig(leaf, CLEAF_B_CONFIG_NOASK, 1);
 	cleafconfig_setBoolConfig(leaf, CLEAF_B_CONFIG_NOPROGRESS, 0);
 	cleafconfig_setBoolConfig(leaf, CLEAF_B_CONFIG_FORCE, 0);
+
+	cleafconfig_setStringConfig(leaf, CLEAF_S_PKGLISTURL, "https://api.acacialinux.org/?get=packagelist");
 
 	if (cleafcore_a_update(leaf) != 0)
 		goto fail;
