@@ -23,7 +23,8 @@ enum cleaf_string_config{
 	CLEAF_S_PACKAGESDIR = 3,
 	CLEAF_S_CONFIGDIR = 4,
 	CLEAF_S_INSTALLEDDIR = 5,
-	CLEAF_S_PKGLISTPATH = 6
+	CLEAF_S_PKGLISTPATH = 6,
+	CLEAF_S_PKGLISTURL = 7
 };
 
 #ifdef __cplusplus
@@ -59,6 +60,15 @@ extern "C" {
 	 * @return	int					0 for false, 1 for true
 	 */
 	int			cleafconfig_getBoolConfig(void* cleafcore, enum cleaf_bool_config config);
+
+	/**
+	 * @brief	Sets a specified string config in the leafconfig
+	 * @param	cleafcore			The cleafcore instance to manipulate
+	 * @param	config				The desired config to modify
+	 * @param	option				The string to insert (nullterminated)
+	 * @return	int					0 if ok, != 0 if the config is not writeable
+	 */
+	int			cleafconfig_setStringConfig(void* cleafcore, enum cleaf_string_config config, const char* option);
 
 	/**
 	 * @brief	Gets a string leaf config

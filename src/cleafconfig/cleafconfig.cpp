@@ -120,6 +120,43 @@ extern "C"{
 
 	}
 
+	int cleafconfig_setStringConfig(void* cleafcore, cleaf_string_config config, const char* option_c_str){
+		FUN();
+
+		std::string option(option_c_str);
+
+		switch (config){
+
+			case CLEAF_S_ROOTDIR: {
+				LOGAPI("[cleaf] Setting leafconfig rootDir to '" + option + "'");
+				((Leafcore*)cleafcore)->getConfig().rootDir = option;
+				break;
+			}
+
+			case CLEAF_S_PKGLISTURL: {
+				LOGAPI("[cleaf] Setting leafconfig pkgListURL to '" + option + "'");
+				((Leafcore*)cleafcore)->getConfig().pkgListURL = option;
+				break;
+			}
+
+			case CLEAF_S_CACHEDIR:
+			case CLEAF_S_DOWNLOADDIR:
+			case CLEAF_S_PACKAGESDIR:
+			case CLEAF_S_CONFIGDIR:
+			case CLEAF_S_INSTALLEDDIR:
+			case CLEAF_S_PKGLISTPATH: {
+				LOGUE("[cleaf] Tried to write read-only leaf string config " + std::to_string((int) config));
+				return -2;
+			}
+
+			default: {
+				LOGUE("[cleaf] Unknown string config id " + std::to_string((int) config));
+				return -1;
+			}
+		}
+		return 0;
+	}
+
 	char* cleafconfig_getStringConfig(void* cleafcore, cleaf_string_config config){
 		FUN();
 
