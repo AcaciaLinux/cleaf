@@ -38,7 +38,7 @@ extern "C"{
 
 		{	//Add the std::cout stream
 			Log::stream_config c;
-			c.loglevel = Log::U;
+			c.loglevel = (Log::level)level;
 			c.print_function_names = false;
 			hlog->addStream(std::cout, c);
 		}
