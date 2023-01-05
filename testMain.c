@@ -16,6 +16,7 @@ int main(){
 	cleafconfig_setBoolConfig(leaf, CLEAF_B_CONFIG_NOASK, 1);
 	cleafconfig_setBoolConfig(leaf, CLEAF_B_CONFIG_NOPROGRESS, 0);
 	cleafconfig_setBoolConfig(leaf, CLEAF_B_CONFIG_FORCE, 0);
+	cleafconfig_setBoolConfig(leaf, CLEAF_B_CONFIG_CHECKREMOTEHASHES, 1);
 
 	cleafconfig_setStringConfig(leaf, CLEAF_S_PKGLISTURL, "https://api.acacialinux.org/?get=packagelist");
 
